@@ -7,6 +7,6 @@
 
 import UIKit
 
-class DishCell: UICollectionViewCell {
+class DishCell: UITableViewCell {
     
 }

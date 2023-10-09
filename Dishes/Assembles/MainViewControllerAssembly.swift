@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+struct MainViewControllerAssembly{
+    func create() -> MainViewController{
+        let mainView = MainView()
+        
+        let controller = MainViewController(mainView: mainView)
+        
+        mainView.delegate = controller
+        
+        return controller
+    }
+}

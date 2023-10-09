@@ -6,3 +6,8 @@
 //
 
 import Foundation
+import UIKit
+
+protocol MainViewControllerDelegate: AnyObject, UITableViewDataSource, UITableViewDelegate{
+    
+}
