@@ -12,5 +12,5 @@ struct Dish{
     var protein: String
     var fats: String
     var carbs: String
-    var cals: String
+    var kcals: String
 }

@@ -10,7 +10,9 @@ import UIKit
 class MainViewController: UIViewController {
     
     private let mainView: MainViewProtocol
-    private let dishes = [Dish(name: "Салат 'Оливье'", protein: "30", fats: "30", carbs: "30", cals: "47")]
+    private let dishes = [Dish(name: "Салат 'Оливье'", protein: "30", fats: "30", carbs: "30", kcals: "47"),
+                          Dish(name: "Салат 'Крабовый'", protein: "15", fats: "15", carbs: "45", kcals: "47"),
+                          Dish(name: "Салат Цезарь с курицей", protein: "50", fats: "10", carbs: "30", kcals: "47")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
