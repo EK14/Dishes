@@ -25,7 +25,6 @@ class MainView: UIView {
         self.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(DishCell.self, forCellReuseIdentifier: "cell")
-//        tableView.rowHeight = UITableView.automaticDimension
         
         tableView.dataSource = delegate
         
@@ -46,6 +45,7 @@ class MainView: UIView {
         addBtn.clipsToBounds = true
         addBtn.translatesAutoresizingMaskIntoConstraints = false
         addBtn.setTitle("Добавить блюдо", for: .normal)
+        addBtn.addTarget(self, action: #selector(addBtndidTouched), for: .touchUpInside)
         
         self.addSubview(addBtn)
         
@@ -55,6 +55,11 @@ class MainView: UIView {
             addBtn.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
             addBtn.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
         ])
+    }
+    
+    @objc
+    private func addBtndidTouched(){
+        delegate?.addBtnDidTouched()
     }
 
 }

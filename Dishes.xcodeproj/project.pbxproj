@@ -17,6 +17,10 @@
 		3DD26C802AD3F148008DA56E /* MainViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD26C7F2AD3F148008DA56E /* MainViewControllerDelegate.swift */; };
 		3DD26C822AD3FD08008DA56E /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD26C812AD3FD08008DA56E /* Dish.swift */; };
 		3DD26C852AD410F9008DA56E /* DishCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD26C842AD410F9008DA56E /* DishCell.swift */; };
+		3DD26C872AD569F1008DA56E /* AddYourDishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD26C862AD569F1008DA56E /* AddYourDishViewController.swift */; };
+		3DD26C892AD56A06008DA56E /* AddYourDishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD26C882AD56A06008DA56E /* AddYourDishView.swift */; };
+		3DD26C8B2AD56B66008DA56E /* AddYourDishViewControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD26C8A2AD56B66008DA56E /* AddYourDishViewControllerAssembly.swift */; };
+		3DD26C8D2AD56CFC008DA56E /* AddYourDishViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD26C8C2AD56CFC008DA56E /* AddYourDishViewControllerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		3DD26C7F2AD3F148008DA56E /* MainViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerDelegate.swift; sourceTree = "<group>"; };
 		3DD26C812AD3FD08008DA56E /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
 		3DD26C842AD410F9008DA56E /* DishCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCell.swift; sourceTree = "<group>"; };
+		3DD26C862AD569F1008DA56E /* AddYourDishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddYourDishViewController.swift; sourceTree = "<group>"; };
+		3DD26C882AD56A06008DA56E /* AddYourDishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddYourDishView.swift; sourceTree = "<group>"; };
+		3DD26C8A2AD56B66008DA56E /* AddYourDishViewControllerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddYourDishViewControllerAssembly.swift; sourceTree = "<group>"; };
+		3DD26C8C2AD56CFC008DA56E /* AddYourDishViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddYourDishViewControllerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				3DD26C642AD3DBE8008DA56E /* MainViewController.swift */,
+				3DD26C862AD569F1008DA56E /* AddYourDishViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -107,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				3DD26C7C2AD3E1C2008DA56E /* MainView.swift */,
+				3DD26C882AD56A06008DA56E /* AddYourDishView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -123,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				3DD26C7A2AD3E159008DA56E /* MainViewControllerAssembly.swift */,
+				3DD26C8A2AD56B66008DA56E /* AddYourDishViewControllerAssembly.swift */,
 			);
 			path = Assembles;
 			sourceTree = "<group>";
@@ -131,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				3DD26C7F2AD3F148008DA56E /* MainViewControllerDelegate.swift */,
+				3DD26C8C2AD56CFC008DA56E /* AddYourDishViewControllerDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -213,13 +225,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DD26C8D2AD56CFC008DA56E /* AddYourDishViewControllerDelegate.swift in Sources */,
 				3DD26C652AD3DBE8008DA56E /* MainViewController.swift in Sources */,
+				3DD26C892AD56A06008DA56E /* AddYourDishView.swift in Sources */,
 				3DD26C852AD410F9008DA56E /* DishCell.swift in Sources */,
 				3DD26C612AD3DBE8008DA56E /* AppDelegate.swift in Sources */,
 				3DD26C822AD3FD08008DA56E /* Dish.swift in Sources */,
 				3DD26C802AD3F148008DA56E /* MainViewControllerDelegate.swift in Sources */,
+				3DD26C872AD569F1008DA56E /* AddYourDishViewController.swift in Sources */,
 				3DD26C7B2AD3E159008DA56E /* MainViewControllerAssembly.swift in Sources */,
 				3DD26C7D2AD3E1C2008DA56E /* MainView.swift in Sources */,
+				3DD26C8B2AD56B66008DA56E /* AddYourDishViewControllerAssembly.swift in Sources */,
 				3DD26C632AD3DBE8008DA56E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
