@@ -13,6 +13,9 @@ class DishCell: UITableViewCell {
     private let microelemHSV = UIStackView()
     private let dishVSV = UIStackView()
     private let kcalAndFavHSV = UIStackView()
+    private let favBtn = UIButton()
+    private var btnState = false
+    
     
     func setupCell(dish: Dish){
         setupHSV()
@@ -104,14 +107,25 @@ class DishCell: UITableViewCell {
         dishKcal.text = kcal + " kcal"
         dishKcal.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         dishKcal.textAlignment = .center
-        let favBtn = UIButton()
         favBtn.setImage(UIImage(systemName: "star"), for: .normal)
         favBtn.tintColor = UIColor(named: "Green")
+        favBtn.addTarget(self, action: #selector(addBtndidTouched), for: .touchUpInside)
         
         kcalAndFavHSV.axis = .horizontal
         kcalAndFavHSV.spacing = 5
         kcalAndFavHSV.distribution = .equalCentering
         kcalAndFavHSV.addArrangedSubview(dishKcal)
         kcalAndFavHSV.addArrangedSubview(favBtn)
+    }
+    
+    @objc
+    private func addBtndidTouched(){
+        if btnState{
+            favBtn.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        }
+        else{
+            favBtn.setImage(UIImage(systemName: "star"), for: .normal)
+        }
+        btnState.toggle()
     }
 }
