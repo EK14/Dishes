@@ -24,12 +24,12 @@ class MainView: UIView {
     private func setupTableView(){
         self.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.register(DishCell.self, forCellReuseIdentifier: "cell")
+//        tableView.rowHeight = UITableView.automaticDimension
         
         tableView.dataSource = delegate
         
         tableView.delegate = delegate
-        
-        tableView.register(DishCell.self, forCellReuseIdentifier: "cell")
         
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),

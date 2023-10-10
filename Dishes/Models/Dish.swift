@@ -9,8 +9,8 @@ import Foundation
 
 struct Dish{
     var name: String
-    var protein: Int
-    var fats: Int
-    var carbs: Int
-    var cals: Int
+    var protein: String
+    var fats: String
+    var carbs: String
+    var cals: String
 }

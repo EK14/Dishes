@@ -10,7 +10,7 @@ import UIKit
 class MainViewController: UIViewController {
     
     private let mainView: MainViewProtocol
-    private let dishes = [Dish]()
+    private let dishes = [Dish(name: "Салат 'Оливье'", protein: "30", fats: "30", carbs: "30", cals: "47")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +39,13 @@ extension MainViewController: MainViewControllerDelegate{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DishCell
+        cell.setupCell(dish: dishes[indexPath.row])
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        72
+    }
+    
 }
