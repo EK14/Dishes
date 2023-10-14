@@ -15,6 +15,17 @@ class DishCell: UITableViewCell {
     private let kcalAndFavHSV = UIStackView()
     private let favBtn = UIButton()
     private var btnState = false
+    private let proteinHSV = UIStackView()
+    private let fatsHSV = UIStackView()
+    private let carbsHSV = UIStackView()
+    private let proteinImg = UIImageView()
+    private let fatsImg = UIImageView()
+    private let carbsImg = UIImageView()
+    private let proteinAmount = UILabel()
+    private let fatsAmount = UILabel()
+    private let carbsAmount = UILabel()
+    private let name = UILabel()
+    private let dishKcal = UILabel()
     
     
     func setupCell(dish: Dish){
@@ -40,10 +51,6 @@ class DishCell: UITableViewCell {
     }
     
     private func setupMicroelemHSV(protein: String, fats: String, carbs: String){
-        let proteinHSV = UIStackView()
-        let fatsHSV = UIStackView()
-        let carbsHSV = UIStackView()
-        
         proteinHSV.axis = .horizontal
         proteinHSV.spacing = 5
         fatsHSV.axis = .horizontal
@@ -55,20 +62,14 @@ class DishCell: UITableViewCell {
         fatsHSV.translatesAutoresizingMaskIntoConstraints = false
         proteinHSV.translatesAutoresizingMaskIntoConstraints = false
         
-        let proteinImg = UIImageView()
         proteinImg.image = UIImage(named: "protein")
-        let fatsImg = UIImageView()
         fatsImg.image = UIImage(named: "fats")
-        let carbsImg = UIImageView()
         carbsImg.image = UIImage(named: "carbs")
         
-        let proteinAmount = UILabel()
         proteinAmount.text = protein
         proteinAmount.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        let fatsAmount = UILabel()
         fatsAmount.text = fats
         fatsAmount.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        let carbsAmount = UILabel()
         carbsAmount.text = carbs
         carbsAmount.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         
@@ -90,11 +91,10 @@ class DishCell: UITableViewCell {
     }
     
     private func setupDishVSV(title: String){
-        let name = UILabel()
         name.numberOfLines = 1
         name.translatesAutoresizingMaskIntoConstraints = false
         name.text = title
-        name.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        name.font = UIFont.systemFont(ofSize: 17, weight: .medium)
         dishVSV.axis = .vertical
         dishVSV.distribution = .fill
         dishVSV.alignment = .leading
@@ -103,7 +103,6 @@ class DishCell: UITableViewCell {
     }
     
     private func setupKcalAndFavHSV(kcal: String){
-        let dishKcal = UILabel()
         dishKcal.text = kcal + " kcal"
         dishKcal.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         dishKcal.textAlignment = .center

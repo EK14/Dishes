@@ -10,7 +10,7 @@ import UIKit
 class MainViewController: UIViewController {
     
     private let mainView: MainViewProtocol
-    private let dishes = [Dish(name: "Салат 'Оливье'", protein: "30", fats: "30", carbs: "30", kcals: "47"),
+    private var dishes = [Dish(name: "Салат 'Оливье'", protein: "30", fats: "30", carbs: "30", kcals: "47"),
                           Dish(name: "Салат 'Крабовый'", protein: "15", fats: "15", carbs: "45", kcals: "47"),
                           Dish(name: "Салат Цезарь с курицей", protein: "50", fats: "10", carbs: "30", kcals: "47")]
     private let addYourDishVC = AddYourDishViewControllerAssembly().create()
@@ -18,6 +18,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.mainView.didLoad()
+        addYourDishVC.delegate = self
         self.navigationItem.title = "Обед"
     }
     
@@ -53,5 +54,10 @@ extension MainViewController: MainViewControllerDelegate{
     
     func addBtnDidTouched() {
         navigationController?.pushViewController(addYourDishVC, animated: true)
+    }
+    
+    func addDish(dish: Dish){
+        dishes.append(dish)
+        mainView.refreshData()
     }
 }

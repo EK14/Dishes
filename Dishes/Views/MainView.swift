@@ -9,6 +9,7 @@ import UIKit
 
 protocol MainViewProtocol: UIView{
     func didLoad()
+    func refreshData()
 }
 
 class MainView: UIView {
@@ -69,5 +70,9 @@ extension MainView: MainViewProtocol{
         setupBackgroundColor()
         setupAddButton()
         setupTableView()
+    }
+    
+    func refreshData() {
+        tableView.reloadData()
     }
 }

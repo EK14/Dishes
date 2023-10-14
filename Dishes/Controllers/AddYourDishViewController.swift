@@ -10,10 +10,14 @@ import UIKit
 class AddYourDishViewController: UIViewController {
     
     private let addYourDishView: AddYourDishViewProtocol
+    var delegate: MainViewControllerDelegate!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        navigationItem.title = "Обед"
+        navigationController?.navigationBar.topItem?.title = ""
+        self.navigationController?.navigationBar.tintColor = .black
+        addYourDishView.didLoad()
     }
     
 
@@ -32,5 +36,10 @@ class AddYourDishViewController: UIViewController {
 }
 
 extension AddYourDishViewController: AddYourDishViewControllerDelegate{
+    func doneBtnDidTouched(dishToAdd: Dish) {
+        delegate.addDish(dish: dishToAdd)
+        navigationController?.popViewController(animated: true)
+    }
+    
     
 }

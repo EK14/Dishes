@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "CD73E432-7CF8-41FB-BBE1-40AFA72A7855"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "34286DD6-AEF7-4898-ABEA-45192F0B48D3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Dishes/Views/AddYourDishView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "doneBtndidTouched()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "34286DD6-AEF7-4898-ABEA-45192F0B48D3 - 7a48a4fd8b75ef65"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Dishes.AddYourDishView.doneBtndidTouched() -&gt; ()"
+                  moduleName = "Dishes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elinakarapetan/Developer/Dishes/Dishes/Views/AddYourDishView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "107"
+                  endingLineNumber = "107"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "34286DD6-AEF7-4898-ABEA-45192F0B48D3 - 7a48a4fd8b75ef65"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Dishes.AddYourDishView.doneBtndidTouched() -&gt; ()"
+                  moduleName = "Dishes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elinakarapetan/Developer/Dishes/Dishes/Views/AddYourDishView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "107"
+                  endingLineNumber = "107"
+                  offsetFromSymbolStart = "168">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2B7FD37F-0B4A-4B78-A10B-A08496047B03"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Dishes/Views/AddYourDishView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "doneBtndidTouched()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
