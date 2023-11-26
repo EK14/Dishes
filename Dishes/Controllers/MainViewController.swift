@@ -9,7 +9,7 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    private let mainView: MainViewProtocol
+    private let mainView: MainView?
     private var dishes = [Dish(name: "Салат 'Оливье'", protein: "30", fats: "30", carbs: "30", kcals: "47"),
                           Dish(name: "Салат 'Крабовый'", protein: "15", fats: "15", carbs: "45", kcals: "47"),
                           Dish(name: "Салат Цезарь с курицей", protein: "50", fats: "10", carbs: "30", kcals: "47")]
@@ -17,12 +17,14 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.mainView.didLoad()
         addYourDishVC.delegate = self
+        mainView?.tableView.dataSource = self
+        mainView?.tableView.delegate = self
         self.navigationItem.title = "Обед"
+        mainView?.onAddBtnDidTouched = {[weak self] in self?.addBtnDidTouched()}
     }
     
-    init(mainView: MainViewProtocol){
+    init(mainView: MainView){
         self.mainView = mainView
         super.init(nibName: nil, bundle: nil)
     }
@@ -37,7 +39,14 @@ class MainViewController: UIViewController {
     
 }
 
-extension MainViewController: MainViewControllerDelegate{
+extension MainViewController: AddYourDishViewControllerDelegate, UITableViewDelegate, UITableViewDataSource{
+    func doneBtnDidTouched(dishToAdd: Dish) {
+        dishes.append(dishToAdd)
+        mainView?.refreshData()
+        navigationController?.popViewController(animated: true)
+    }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         dishes.count
     }
@@ -54,10 +63,5 @@ extension MainViewController: MainViewControllerDelegate{
     
     func addBtnDidTouched() {
         navigationController?.pushViewController(addYourDishVC, animated: true)
-    }
-    
-    func addDish(dish: Dish){
-        dishes.append(dish)
-        mainView.refreshData()
     }
 }

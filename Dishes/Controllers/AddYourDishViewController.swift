@@ -7,21 +7,20 @@
 
 import UIKit
 
-class AddYourDishViewController: UIViewController {
+class AddYourDishViewController: UIViewController{
     
-    private let addYourDishView: AddYourDishViewProtocol
-    var delegate: MainViewControllerDelegate!
+    private let addYourDishView: AddYourDishView?
+    var delegate: AddYourDishViewControllerDelegate!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Обед"
         navigationController?.navigationBar.topItem?.title = ""
         self.navigationController?.navigationBar.tintColor = .black
-        addYourDishView.didLoad()
+        addYourDishView?.onDoneButtonDidTouched = {[weak self] in self?.doneBtndidTouched()}
     }
     
-
-    init(addYourDishView: AddYourDishViewProtocol){
+    init(addYourDishView: AddYourDishView){
         self.addYourDishView = addYourDishView
         super.init(nibName: nil, bundle: nil)
     }
@@ -33,13 +32,17 @@ class AddYourDishViewController: UIViewController {
     override func loadView() {
         view = addYourDishView
     }
+    
+    @objc
+    private func doneBtndidTouched(){
+        guard let name = addYourDishView?.nameTF.text else {return}
+        guard let protein = addYourDishView?.proteinTF.text else {return}
+        guard let fats = addYourDishView?.fatsTF.text else {return}
+        guard let carbs = addYourDishView?.carbsTF.text else {return}
+        guard let kcal = addYourDishView?.kcalTF.text else {return}
+        let dishToAdd = Dish(name: name, protein: protein, fats: fats, carbs: carbs, kcals: kcal)
+        delegate?.doneBtnDidTouched(dishToAdd: dishToAdd)
+    }
 }
 
-extension AddYourDishViewController: AddYourDishViewControllerDelegate{
-    func doneBtnDidTouched(dishToAdd: Dish) {
-        delegate.addDish(dish: dishToAdd)
-        navigationController?.popViewController(animated: true)
-    }
-    
-    
-}
+

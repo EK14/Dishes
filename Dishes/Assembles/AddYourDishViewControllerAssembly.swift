@@ -13,8 +13,6 @@ struct AddYourDishViewControllerAssembly{
         
         let controller = AddYourDishViewController(addYourDishView: addYourDishView)
         
-        addYourDishView.delegate = controller
-        
         return controller
     }
 }

@@ -7,29 +7,35 @@
 
 import UIKit
 
-protocol MainViewProtocol: UIView{
-    func didLoad()
-    func refreshData()
-}
-
 class MainView: UIView {
     
-    weak var delegate: MainViewControllerDelegate?
-    private var tableView = UITableView()
+    var tableView = UITableView()
     private let addBtn = UIButton()
+    var onAddBtnDidTouched: (()->())?
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupBackgroundColor()
+        setupAddButton()
+        setupTableView()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     private func setupBackgroundColor(){
         self.backgroundColor = .white
+    }
+    
+    func refreshData() {
+        tableView.reloadData()
     }
     
     private func setupTableView(){
         self.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(DishCell.self, forCellReuseIdentifier: "cell")
-        
-        tableView.dataSource = delegate
-        
-        tableView.delegate = delegate
         
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
@@ -46,7 +52,7 @@ class MainView: UIView {
         addBtn.clipsToBounds = true
         addBtn.translatesAutoresizingMaskIntoConstraints = false
         addBtn.setTitle("Добавить блюдо", for: .normal)
-        addBtn.addTarget(self, action: #selector(addBtndidTouched), for: .touchUpInside)
+        addBtn.addTarget(self, action: #selector(addBtnDidTouched), for: .touchUpInside)
         
         self.addSubview(addBtn)
         
@@ -59,20 +65,8 @@ class MainView: UIView {
     }
     
     @objc
-    private func addBtndidTouched(){
-        delegate?.addBtnDidTouched()
+    private func addBtnDidTouched(){
+        onAddBtnDidTouched?()
     }
 
-}
-
-extension MainView: MainViewProtocol{
-    func didLoad(){
-        setupBackgroundColor()
-        setupAddButton()
-        setupTableView()
-    }
-    
-    func refreshData() {
-        tableView.reloadData()
-    }
 }

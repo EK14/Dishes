@@ -7,13 +7,9 @@
 
 import UIKit
 
-protocol AddYourDishViewProtocol: UIView{
-    func didLoad()
-}
-
 class AddYourDishView: UIView {
 
-    weak var delegate: AddYourDishViewControllerDelegate?
+    var onDoneButtonDidTouched: (() -> ())?
     let title = UILabel()
     let stackView = UIStackView()
     var nameTF = UITextField()
@@ -24,6 +20,18 @@ class AddYourDishView: UIView {
     
     private func setupBackgroundColor(){
         self.backgroundColor = .white
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupBackgroundColor()
+        setupTitle()
+        setupTextFields()
+        setupBtn()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     private func setupTitle(){
@@ -97,28 +105,12 @@ class AddYourDishView: UIView {
         ])
     }
     
+    @objc private func doneBtndidTouched(){
+        onDoneButtonDidTouched?()
+    }
+    
     private func pushAlert(){
         print("Привет")
     }
-    
-    @objc
-    private func doneBtndidTouched(){
-        guard let name = nameTF.text else {return}
-        guard let protein = proteinTF.text else {return}
-        guard let fats = fatsTF.text else {return}
-        guard let carbs = carbsTF.text else {return}
-        guard let kcal = kcalTF.text else {return}
-        var dishToAdd = Dish(name: name, protein: protein, fats: fats, carbs: carbs, kcals: kcal)
-        delegate?.doneBtnDidTouched(dishToAdd: dishToAdd)
-    }
 
-}
-
-extension AddYourDishView: AddYourDishViewProtocol{
-    func didLoad(){
-        setupBackgroundColor()
-        setupTitle()
-        setupTextFields()
-        setupBtn()
-    }
 }

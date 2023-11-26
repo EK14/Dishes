@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol AddYourDishViewControllerDelegate: AnyObject{
+protocol AddYourDishViewControllerDelegate{
     func doneBtnDidTouched(dishToAdd: Dish)
 }

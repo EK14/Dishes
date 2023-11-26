@@ -13,8 +13,6 @@ struct MainViewControllerAssembly{
         
         let controller = MainViewController(mainView: mainView)
         
-        mainView.delegate = controller
-        
         return controller
     }
 }
