@@ -70,12 +70,8 @@
 		3DD26C5F2AD3DBE8008DA56E /* Dishes */ = {
 			isa = PBXGroup;
 			children = (
-				3DD26C832AD410BB008DA56E /* DishCell */,
-				3DD26C7E2AD3F125008DA56E /* Delegates */,
-				3DD26C792AD3E087008DA56E /* Assembles */,
+				3DD6BEEB2B14865900C0974B /* Screens */,
 				3DD26C782AD3DF40008DA56E /* Models */,
-				3DD26C772AD3DF30008DA56E /* Views */,
-				3DD26C762AD3DF28008DA56E /* Controllers */,
 				3DD26C752AD3DECD008DA56E /* Core */,
 				3DD26C742AD3DEA6008DA56E /* Resources */,
 			);
@@ -101,24 +97,6 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		3DD26C762AD3DF28008DA56E /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				3DD26C642AD3DBE8008DA56E /* MainViewController.swift */,
-				3DD26C862AD569F1008DA56E /* AddYourDishViewController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		3DD26C772AD3DF30008DA56E /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				3DD26C7C2AD3E1C2008DA56E /* MainView.swift */,
-				3DD26C882AD56A06008DA56E /* AddYourDishView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		3DD26C782AD3DF40008DA56E /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,29 +105,43 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		3DD26C792AD3E087008DA56E /* Assembles */ = {
-			isa = PBXGroup;
-			children = (
-				3DD26C7A2AD3E159008DA56E /* MainViewControllerAssembly.swift */,
-				3DD26C8A2AD56B66008DA56E /* AddYourDishViewControllerAssembly.swift */,
-			);
-			path = Assembles;
-			sourceTree = "<group>";
-		};
-		3DD26C7E2AD3F125008DA56E /* Delegates */ = {
-			isa = PBXGroup;
-			children = (
-				3DD26C8C2AD56CFC008DA56E /* AddYourDishViewControllerDelegate.swift */,
-			);
-			path = Delegates;
-			sourceTree = "<group>";
-		};
 		3DD26C832AD410BB008DA56E /* DishCell */ = {
 			isa = PBXGroup;
 			children = (
 				3DD26C842AD410F9008DA56E /* DishCell.swift */,
 			);
 			path = DishCell;
+			sourceTree = "<group>";
+		};
+		3DD6BEEB2B14865900C0974B /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				3DD6BEED2B14877000C0974B /* AddYourDish */,
+				3DD6BEEC2B14872A00C0974B /* Main */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		3DD6BEEC2B14872A00C0974B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				3DD26C832AD410BB008DA56E /* DishCell */,
+				3DD26C642AD3DBE8008DA56E /* MainViewController.swift */,
+				3DD26C7C2AD3E1C2008DA56E /* MainView.swift */,
+				3DD26C7A2AD3E159008DA56E /* MainViewControllerAssembly.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		3DD6BEED2B14877000C0974B /* AddYourDish */ = {
+			isa = PBXGroup;
+			children = (
+				3DD26C8C2AD56CFC008DA56E /* AddYourDishViewControllerDelegate.swift */,
+				3DD26C8A2AD56B66008DA56E /* AddYourDishViewControllerAssembly.swift */,
+				3DD26C882AD56A06008DA56E /* AddYourDishView.swift */,
+				3DD26C862AD569F1008DA56E /* AddYourDishViewController.swift */,
+			);
+			path = AddYourDish;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
